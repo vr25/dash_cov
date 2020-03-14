@@ -22,7 +22,7 @@ end = datetime.datetime.today()
 
 #small-cap
 
-df1_small = pd.read_csv("constituents_sp_600.csv", index_col=False).head(5)
+df1_small = pd.read_csv("constituents_sp_600.csv", index_Col=False).head(5)
 inputStock1 = df1_small['Symbol']
 inputSector1 = df1_small['Sector']
 
@@ -48,7 +48,7 @@ df1 = df1.groupby(['Date', 'Sector']).mean().reset_index()
 
 #mid-cap
 
-df1_mid = pd.read_csv("constituents_sp_400.csv", index_col=False).head(5)
+df1_mid = pd.read_csv("constituents_sp_400.csv", index_Col=False).head(5)
 inputStock2 = df1_mid['Symbol']
 inputSector2 = df1_mid['Sector']
 
@@ -74,7 +74,7 @@ df2 = df2.groupby(['Date', 'Sector']).mean().reset_index()
 
 #large-cap
 
-df1_large = pd.read_csv("constituents_sp_500.csv", index_col=False).head(5)
+df1_large = pd.read_csv("constituents_sp_500.csv", index_Col=False).head(5)
 inputStock3 = df1_large['Symbol']
 inputSector3 = df1_large['Sector']
 
@@ -107,7 +107,7 @@ app.config.suppress_callback_exceptions = True
 
 app.layout = html.Div([
     dbc.Row([
-        dbc.col([html.Div([
+        dbc.Col([html.Div([
 
     dcc.Dropdown(
         id='sector1-dropdown',
@@ -119,7 +119,7 @@ app.layout = html.Div([
     style={'width': '33%', 'display': 'inline-block'})
         ]),
 
-        dbc.col([html.Div([
+        dbc.Col([html.Div([
 
     dcc.Dropdown(
         id='sector2-dropdown',
@@ -131,7 +131,7 @@ app.layout = html.Div([
     style={'width': '33%', 'display': 'inline-block'})
         ]),
 
-        dbc.col([html.Div([
+        dbc.Col([html.Div([
 
     dcc.Dropdown(
         id='sector3-dropdown',
@@ -146,7 +146,7 @@ app.layout = html.Div([
 
 
     dbc.Row([
-        dbc.col([html.Div([
+        dbc.Col([html.Div([
 
     dcc.Dropdown(
         id='symbol1-dropdown',
@@ -158,7 +158,7 @@ app.layout = html.Div([
     style={'width': '33%', 'display': 'inline-block'})
     ]),
 
-    dbc.col([html.Div([
+    dbc.Col([html.Div([
 
     dcc.Dropdown(
         id='symbol2-dropdown',
@@ -170,7 +170,7 @@ app.layout = html.Div([
     style={'width': '33%', 'display': 'inline-block'})
     ]),
 
-    dbc.col([html.Div([
+    dbc.Col([html.Div([
 
     dcc.Dropdown(
         id='symbol3-dropdown',
