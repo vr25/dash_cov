@@ -1,0 +1,17 @@
+heroku login
+
+heroku git:remote -a dash-cov
+
+git push heroku master
+
+heroku ps:scale web=1
+
+heroku logs --tail
+
+---------------------------------
+
+git add .
+
+git commit -m "first commit"
+
+git push origin master
