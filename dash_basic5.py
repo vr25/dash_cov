@@ -9,7 +9,6 @@ import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import datetime
-from iexfinance.stocks import get_historical_data
 from dateutil.relativedelta import relativedelta
 import plotly.graph_objs as go 
 import pandas
