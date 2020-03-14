@@ -1,1 +1,1 @@
-web: gunicorn python3 dash_basic5.py
+web: gunicorn python dash_basic5.py
