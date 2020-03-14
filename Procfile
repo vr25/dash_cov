@@ -1,1 +1,1 @@
-web gunicorn run:server
+web: python3 dash_basic5.py
