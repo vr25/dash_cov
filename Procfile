@@ -1,1 +1,1 @@
-web: gunicorn python dash_basic5.py
+web: gunicorn dash_basic5:app
