@@ -47,7 +47,10 @@ df_copy = df.copy()
 df = df.groupby(['Date', 'Sector']).mean().reset_index()
 
 # Dash app
-app = dash.Dash()
+
+app = dash.Dash(__name__)
+
+server = app.server
 
 app.config.suppress_callback_exceptions = True
 
