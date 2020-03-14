@@ -1,1 +1,1 @@
-web: python3 dash_basic5.py
+worker: python3 dash_basic5.py
