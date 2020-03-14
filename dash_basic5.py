@@ -67,7 +67,7 @@ app.layout = html.Div([
     ),
 
     dcc.Graph(id='graph1')],
-    style={'width': '48%', 'display': 'inline-block'})
+    style={'width': '33.33%', 'display': 'inline-block'})
         ]),
 
     dbc.Row([html.Div([
@@ -82,7 +82,7 @@ app.layout = html.Div([
     ),
 
     dcc.Graph(id='graph2')],
-    style={'width': '48%', 'display': 'inline-block'})
+    style={'width': '33.33%', 'display': 'inline-block'})
     ])
             
 ]
