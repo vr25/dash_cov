@@ -22,7 +22,7 @@ end = datetime.datetime.today()
 
 #small-cap
 
-df1_small = pd.read_csv("constituents_sp_600.csv", index_Col=False).head(5)
+df1_small = pd.read_csv("constituents_sp_600.csv", index_col=False).head(5)
 inputStock1 = df1_small['Symbol']
 inputSector1 = df1_small['Sector']
 
@@ -48,7 +48,7 @@ df1 = df1.groupby(['Date', 'Sector']).mean().reset_index()
 
 #mid-cap
 
-df1_mid = pd.read_csv("constituents_sp_400.csv", index_Col=False).head(5)
+df1_mid = pd.read_csv("constituents_sp_400.csv", index_col=False).head(5)
 inputStock2 = df1_mid['Symbol']
 inputSector2 = df1_mid['Sector']
 
@@ -74,7 +74,7 @@ df2 = df2.groupby(['Date', 'Sector']).mean().reset_index()
 
 #large-cap
 
-df1_large = pd.read_csv("constituents_sp_500.csv", index_Col=False).head(5)
+df1_large = pd.read_csv("constituents_sp_500.csv", index_col=False).head(5)
 inputStock3 = df1_large['Symbol']
 inputSector3 = df1_large['Sector']
 
@@ -116,7 +116,7 @@ app.layout = html.Div([
         value=inputSector1),
 
     dcc.Graph(id='graph1')],
-    style={'width': '33%', 'display': 'inline-block'})
+    style={'width': '33%', 'display': 'inline-block', 'borderWidth': '1px'})
         ]),
 
         dbc.Col([html.Div([
@@ -128,7 +128,7 @@ app.layout = html.Div([
         value=inputSector2),
 
     dcc.Graph(id='graph3')],
-    style={'width': '33%', 'display': 'inline-block'})
+    style={'width': '33%', 'display': 'inline-block', 'borderWidth': '1px'})
         ]),
 
         dbc.Col([html.Div([
@@ -140,7 +140,7 @@ app.layout = html.Div([
         value=inputSector3),
 
     dcc.Graph(id='graph5')],
-    style={'width': '33%', 'display': 'inline-block'})
+    style={'width': '33%', 'display': 'inline-block', 'borderWidth': '1px'})
         ]),        
         ]),
 
@@ -155,7 +155,7 @@ app.layout = html.Div([
         value=[inputStock1[0]]),
 
     dcc.Graph(id='graph2')],
-    style={'width': '33%', 'display': 'inline-block'})
+    style={'width': '33%', 'display': 'inline-block', 'borderWidth': '1px'})
     ]),
 
     dbc.Col([html.Div([
@@ -167,7 +167,7 @@ app.layout = html.Div([
         value=[inputStock2[0]]),
 
     dcc.Graph(id='graph4')],
-    style={'width': '33%', 'display': 'inline-block'})
+    style={'width': '33%', 'display': 'inline-block', 'borderWidth': '1px'})
     ]),
 
     dbc.Col([html.Div([
@@ -179,7 +179,7 @@ app.layout = html.Div([
         value=[inputStock3[0]]),
 
     dcc.Graph(id='graph6')],
-    style={'width': '33%', 'display': 'inline-block'})
+    style={'width': '33%', 'display': 'inline-block', 'borderWidth': '1px'})
     ]),
     ])       
 ]
