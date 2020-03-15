@@ -109,7 +109,7 @@ app.layout = html.Div([
     dbc.Row([
         dbc.Col([
             dbc.Row(
-                dbc.Col([
+                #dbc.Col([
                     html.Div([
                         dcc.Dropdown(
                             id='sector1-dropdown',
@@ -122,12 +122,12 @@ app.layout = html.Div([
                         ], #close div
                         style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
                         ) #close div
-                    ]) #close Col
+                    #]) #close Col
                 ), #close Row
 
 
             dbc.Row(
-                dbc.Col([
+                #dbc.Col([
                     html.Div([
                         dcc.Dropdown(
                             id='symbol1-dropdown',
@@ -140,7 +140,7 @@ app.layout = html.Div([
                         ], #close div
                         style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
                         ) #close div
-                    ]) #close Col
+                    #]) #close Col
                 ) #close Row
             ]), #close Col
 
@@ -149,7 +149,7 @@ app.layout = html.Div([
 
         dbc.Col([
             dbc.Row(
-                dbc.Col([
+                #dbc.Col([
                     html.Div([
                         dcc.Dropdown(
                             id='sector2-dropdown',
@@ -162,12 +162,12 @@ app.layout = html.Div([
                         ], #close div
                         style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
                         ) #close div
-                    ]) #close Col
+                    #]) #close Col
                 ), #close Row
 
 
             dbc.Row(
-                dbc.Col([
+                #dbc.Col([
                     html.Div([
                         dcc.Dropdown(
                             id='symbol2-dropdown',
@@ -180,7 +180,7 @@ app.layout = html.Div([
                         ], #close div
                         style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
                         ) #close div
-                    ]) #close Col
+                    #]) #close Col
                 ) #close Row
             ]), #close Col
 
@@ -191,7 +191,7 @@ app.layout = html.Div([
 
         dbc.Col([
             dbc.Row(
-                dbc.Col([
+                #dbc.Col([
                     html.Div([
                         dcc.Dropdown(
                             id='sector3-dropdown',
@@ -204,12 +204,12 @@ app.layout = html.Div([
                         ], #close div
                         style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
                         ) #close div
-                    ]) #close Col
+                    #]) #close Col
                 ), #close Row
 
 
             dbc.Row(
-                dbc.Col([
+                #dbc.Col([
                     html.Div([
                         dcc.Dropdown(
                             id='symbol3-dropdown',
@@ -222,14 +222,9 @@ app.layout = html.Div([
                         ], #close div
                         style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
                         ) #close div
-                    ]) #close Col
+                    #]) #close Col
                 ) #close Row
             ]) #close Col
-
-
-
-
-
 
 
         ]) #close row
