@@ -99,7 +99,7 @@ df3 = df3.groupby(['Date', 'Sector']).mean().reset_index()
 
 # Dash app
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__) #, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 #'width': '33%', 'display': 'inline-block',
 
@@ -120,8 +120,8 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph1')
                 ], #close div
-                style={'border': '1px solid'})
-            ], width="auto"), #close Col
+                style={'width': '33%', 'border': '1px solid'})
+            ]), #close Col
 
         dbc.Col([
             html.Div([
@@ -134,9 +134,9 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph3')
                 ], #close div
-                style={'border': '1px solid'}
+                style={'width': '33%', 'border': '1px solid'}
                 ) #close div
-            ], width="auto"), #close Col
+            ]), #close Col
 
 
         dbc.Col([
@@ -150,9 +150,9 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph5')
                 ], #close div
-                style={'border': '1px solid'}
+                style={'width': '33%', 'border': '1px solid'}
                 ) #close div
-            ], width="auto") #close Col
+            ]) #close Col
         ]), #close Row
 
     
@@ -171,7 +171,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ], width="auto"), #close Col
+            ]), #close Col
 
         dbc.Col([
             html.Div([
@@ -186,7 +186,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ], width="auto"), #close Col
+            ]), #close Col
 
         dbc.Col([
             html.Div([
@@ -201,7 +201,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ], width="auto") #close Col
+            ]) #close Col
         ]) # close Row   
 
         ]) #close Row
