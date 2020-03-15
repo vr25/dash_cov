@@ -4,7 +4,7 @@ import dash_ui as dui
 
 my_css_urls = ["https://codepen.io/rmarren1/pen/mLqGRg.css"]
 
-app = dash.Dash(__name__, external_stylesheets=my_css_urls)
+app = Dash(__name__, external_stylesheets=my_css_urls)
 
 grid = dui.Grid(_id="grid", num_rows=12, num_cols=12, grid_padding=0)
 
