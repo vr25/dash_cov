@@ -17,8 +17,7 @@ import pandas as pd
 import pandas_datareader.data as web
 import numpy as np
 import copy
-import quandl
-from api_quandl import api
+
 
 start = datetime.datetime.today() - relativedelta(days=4)
 end = datetime.datetime.today()
