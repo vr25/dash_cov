@@ -137,8 +137,23 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
+            ]), #close Row
+
+        dbc.Col([
+            html.Div([
+                dcc.Dropdown(
+                    id='symbol3-dropdown',
+                    options=[{'label': i, 'value': i} for i in df3_copy.Symbol.unique()],
+                    multi=True,
+                    value=[inputStock3[0]]
+                    ),
+
+                dcc.Graph(id='graph6')
+                ], #close div
+                style={'border': '1px solid'}
+                ) #close div
             ]) #close Row
-        ]), #close Col
+        ]) #close Col
 
 
     
@@ -176,7 +191,7 @@ body = dbc.Container([dbc.Row([
         ]), # close Col
 
 
-    dbc.Row([
+    
         dbc.Col([
             html.Div([
                 dcc.Dropdown(
@@ -190,25 +205,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]), #close Row
-        
-           
-        dbc.Col([
-            html.Div([
-                dcc.Dropdown(
-                    id='symbol3-dropdown',
-                    options=[{'label': i, 'value': i} for i in df3_copy.Symbol.unique()],
-                    multi=True,
-                    value=[inputStock3[0]]
-                    ),
-
-                dcc.Graph(id='graph6')
-                ], #close div
-                style={'border': '1px solid'}
-                ) #close div
             ]) #close Row
-        ]) #close Col
-                  
 
         ]) #close Row
     ]) #close div
