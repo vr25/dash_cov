@@ -32,29 +32,6 @@ grid.add_element(col=9, row=7, width=4, height=6, element=html.Div(
     style={"background-color": "yellow", "height": "100%", "width": "100%"}
 ))
 
-
-'''
-grid.add_element(col=1, row=1, width=3, height=4, element=html.Div(
-    style={"background-color": "red", "height": "100%", "width": "100%"}
-))
-
-grid.add_element(col=4, row=1, width=9, height=4, element=html.Div(
-    style={"background-color": "blue", "height": "100%", "width": "100%"}
-))
-
-grid.add_element(col=1, row=5, width=12, height=4, element=html.Div(
-    style={"background-color": "green", "height": "100%", "width": "100%"}
-))
-
-grid.add_element(col=1, row=9, width=9, height=4, element=html.Div(
-    style={"background-color": "orange", "height": "100%", "width": "100%"}
-))
-
-grid.add_element(col=10, row=9, width=3, height=4, element=html.Div(
-    style={"background-color": "purple", "height": "100%", "width": "100%"}
-))
-'''
-
 server = app.server
 
 app.layout = html.Div(
