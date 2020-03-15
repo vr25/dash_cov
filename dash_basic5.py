@@ -99,7 +99,9 @@ df3 = df3.groupby(['Date', 'Sector']).mean().reset_index()
 
 # Dash app
 
-app = dash.Dash(__name__) #, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+#'width': '33%', 'display': 'inline-block',
 
 server = app.server
 
@@ -118,7 +120,7 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph1')
                 ], #close div
-                style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'})
+                style={'border': '1px solid'})
             ]), #close Row
 
         dbc.Col([
@@ -133,7 +135,7 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph2')
                 ], #close div
-                style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
+                style={'border': '1px solid'}
                 ) #close div
             ]) #close Row
         ]), #close Col
@@ -153,7 +155,7 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph3')
                 ], #close div
-                style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
+                style={'border': '1px solid'}
                 ) #close div
             ]), #close Row
 
@@ -168,7 +170,7 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph4')
                 ], #close div
-                style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
+                style={'border': '1px solid'}
                 ) #close div
             ]) #close Row
         ]), # close Col
@@ -186,7 +188,7 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph5')
                 ], #close div
-                style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
+                style={'border': '1px solid'}
                 ) #close div
             ]), #close Row
         
@@ -202,7 +204,7 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph6')
                 ], #close div
-                style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
+                style={'border': '1px solid'}
                 ) #close div
             ]) #close Row
         ]) #close Col
