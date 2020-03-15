@@ -107,6 +107,38 @@ server = app.server
 
 app.config.suppress_callback_exceptions = True
 
+app.layout = html.Div([
+html.Div([
+    html.H1('Graph 1',
+    ),
+
+    dcc.Dropdown(
+        id='sector1-dropdown',
+        options=[{'label': i, 'value': i} for i in df1.Sector.unique()],
+        multi=True,
+        value=inputSector1
+    ),
+
+    dcc.Graph(id='graph1')],
+    style={'width': '48%', 'display': 'inline-block'}),
+
+html.Div([
+    html.H1('Graph 2',
+    ),
+
+    dcc.Dropdown(
+        id='symbol1-dropdown',
+        options=[{'label': i, 'value': i} for i in df1_copy.Symbol.unique()],
+        multi=True,
+        value=[inputStock1[0]]
+    ),
+
+    dcc.Graph(id='graph2')],
+    style={'width': '48%', 'display': 'inline-block'})
+
+])
+
+'''
 body = dbc.Container([dbc.Row([
     dbc.Row([
     dbc.Col([
@@ -213,7 +245,7 @@ body = dbc.Container([dbc.Row([
     ]) #close div
 
 app.layout = html.Div([body])
-
+'''
 
 #small-cap
 @app.callback(
