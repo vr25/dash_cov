@@ -4,7 +4,6 @@ import dash_ui as dui
 
 my_css_urls = ["https://codepen.io/rmarren1/pen/mLqGRg.css"]
 
-server = app.server
 app = dash.Dash(__name__, external_stylesheets=my_css_urls)
 
 grid = dui.Grid(_id="grid", num_rows=12, num_cols=12, grid_padding=0)
@@ -28,6 +27,8 @@ grid.add_element(col=1, row=9, width=9, height=4, element=html.Div(
 grid.add_element(col=10, row=9, width=3, height=4, element=html.Div(
     style={"background-color": "purple", "height": "100%", "width": "100%"}
 ))
+
+server = app.server
 
 app.layout = html.Div(
     dui.Layout(
