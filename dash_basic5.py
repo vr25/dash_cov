@@ -121,8 +121,42 @@ body = dbc.Container([dbc.Row([
                 dcc.Graph(id='graph1')
                 ], #close div
                 style={'border': '1px solid'})
-            ]), #close Row
+            ]), #close Col
 
+        dbc.Col([
+            html.Div([
+                dcc.Dropdown(
+                    id='sector2-dropdown',
+                    options=[{'label': i, 'value': i} for i in df2.Sector.unique()],
+                    multi=True,
+                    value=inputSector2
+                    ),
+
+                dcc.Graph(id='graph3')
+                ], #close div
+                style={'border': '1px solid'}
+                ) #close div
+            ]), #close Col
+
+
+        dbc.Col([
+            html.Div([
+                dcc.Dropdown(
+                    id='sector3-dropdown',
+                    options=[{'label': i, 'value': i} for i in df3.Sector.unique()],
+                    multi=True,
+                    value=inputSector3
+                    ),
+
+                dcc.Graph(id='graph5')
+                ], #close div
+                style={'border': '1px solid'}
+                ) #close div
+            ]) #close Col
+        ]), #close Row
+
+    
+    dbc.Row([
         dbc.Col([
                 html.Div([
 
@@ -137,42 +171,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]), #close Row
-
-        dbc.Col([
-            html.Div([
-                dcc.Dropdown(
-                    id='symbol3-dropdown',
-                    options=[{'label': i, 'value': i} for i in df3_copy.Symbol.unique()],
-                    multi=True,
-                    value=[inputStock3[0]]
-                    ),
-
-                dcc.Graph(id='graph6')
-                ], #close div
-                style={'border': '1px solid'}
-                ) #close div
-            ]) #close Row
-        ]), #close Col
-
-
-    
-    dbc.Row([
-        dbc.Col([
-
-            html.Div([
-                dcc.Dropdown(
-                    id='sector2-dropdown',
-                    options=[{'label': i, 'value': i} for i in df2.Sector.unique()],
-                    multi=True,
-                    value=inputSector2
-                    ),
-
-                dcc.Graph(id='graph3')
-                ], #close div
-                style={'border': '1px solid'}
-                ) #close div
-            ]), #close Row
+            ]), #close Col
 
         dbc.Col([
             html.Div([
@@ -187,25 +186,23 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]) #close Row
-        ]), # close Col
+            ]), #close Col
 
-
-    
         dbc.Col([
             html.Div([
                 dcc.Dropdown(
-                    id='sector3-dropdown',
-                    options=[{'label': i, 'value': i} for i in df3.Sector.unique()],
+                    id='symbol3-dropdown',
+                    options=[{'label': i, 'value': i} for i in df3_copy.Symbol.unique()],
                     multi=True,
-                    value=inputSector3
+                    value=[inputStock3[0]]
                     ),
 
-                dcc.Graph(id='graph5')
+                dcc.Graph(id='graph6')
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]) #close Row
+            ]) #close Col
+        ]) # close Row   
 
         ]) #close Row
     ]) #close div
