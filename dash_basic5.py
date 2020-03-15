@@ -17,33 +17,32 @@ import pandas as pd
 import pandas_datareader.data as web
 import numpy as np
 import copy
+import quandl
+from api_quandl import api
 
-start = datetime.datetime.today() - relativedelta(days=30)
+start = datetime.datetime.today() - relativedelta(days=4)
 end = datetime.datetime.today()
 
 #small-cap
 
-df1_small = pd.read_csv("constituents_sp_600.csv", index_col=False) #.head(5)
+df1_small = pd.read_csv("sp_600.csv", index_col=False) 
 inputStock1 = df1_small['Symbol']
-inputSector1 = df1_small['Sector'].unique()
+inputSector1 = df1_small['Sector']
 
 df1 = pd.DataFrame()
 
 for (i, j) in zip(inputStock1, inputSector1):
+    df1_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
+    df1_['Symbol'] = i
+    df1_['Sector'] = j
+    df1 = pd.concat([df1, df1_])
 
-    try:
-        df1_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
-        df1_['Symbol'] = i
-        df1_['Sector'] = j
-        df1 = pd.concat([df1, df1_])
-    except:
-        print("cannot fetch data from yahoo.")
-
-df1['daily_returns'] = df1['Adj Close'].pct_change()
+df1['daily_returns'] = df1['Close'].pct_change()
 df1 = df1.dropna()
 df1['daily_cum_returns'] = (df1['daily_returns'] + 1).cumprod()
 
 df1_copy = df1.copy()
+
 df1 = df1.groupby(['Date', 'Sector']).mean().reset_index()
 
 
@@ -51,25 +50,22 @@ df1 = df1.groupby(['Date', 'Sector']).mean().reset_index()
 
 df1_mid = pd.read_csv("constituents_sp_400.csv", index_col=False)#.head(5)
 inputStock2 = df1_mid['Symbol']
-inputSector2 = df1_mid['Sector'].unique()
+inputSector2 = df1_mid['Sector']
 
 df2 = pd.DataFrame()
 
 for (i, j) in zip(inputStock2, inputSector2):
-
-    try:
-        df2_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
-        df2_['Symbol'] = i
-        df2_['Sector'] = j
-        df2 = pd.concat([df2, df2_])
-    except:
-        print("cannot fetch data from yahoo.")
+    df2_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
+    df2_['Symbol'] = i
+    df2_['Sector'] = j
+    df2 = pd.concat([df2, df2_])
 
 df2['daily_returns'] = df2['Adj Close'].pct_change()
 df2 = df2.dropna()
 df2['daily_cum_returns'] = (df2['daily_returns'] + 1).cumprod()
 
 df2_copy = df2.copy()
+
 df2 = df2.groupby(['Date', 'Sector']).mean().reset_index()
 
 
@@ -77,31 +73,27 @@ df2 = df2.groupby(['Date', 'Sector']).mean().reset_index()
 
 df1_large = pd.read_csv("constituents_sp_500.csv", index_col=False) #.head(5)
 inputStock3 = df1_large['Symbol']
-inputSector3 = df1_large['Sector'].unique()
+inputSector3 = df1_large['Sector']
 
 df3 = pd.DataFrame()
 
 for (i, j) in zip(inputStock3, inputSector3):
-
-    try:
         df3_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
         df3_['Symbol'] = i
         df3_['Sector'] = j
         df3 = pd.concat([df3, df3_])
-    except:
-        print("cannot fetch data from yahoo.")
 
 df3['daily_returns'] = df3['Adj Close'].pct_change()
 df3 = df3.dropna()
 df3['daily_cum_returns'] = (df3['daily_returns'] + 1).cumprod()
 
 df3_copy = df3.copy()
+
 df3 = df3.groupby(['Date', 'Sector']).mean().reset_index()
+
 
 # Dash app
 my_css_urls = ["https://codepen.io/rmarren1/pen/mLqGRg.css"]
-
-#app = dash.Dash(__name__) #, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 app = dash.Dash(__name__, external_stylesheets=my_css_urls)
 
@@ -197,6 +189,8 @@ app.layout = html.Div(
 server = app.server
 
 app.config.suppress_callback_exceptions = True
+
+
 '''
 app.layout = html.Div([
 html.Div([
@@ -337,6 +331,7 @@ body = dbc.Container([dbc.Row([
 
 app.layout = html.Div([body])
 '''
+
 
 #small-cap
 @app.callback(
