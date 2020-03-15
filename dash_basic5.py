@@ -23,9 +23,9 @@ end = datetime.datetime.today()
 
 #small-cap
 
-df1_small = pd.read_csv("constituents_sp_600.csv", index_col=False).head(5)
+df1_small = pd.read_csv("constituents_sp_600.csv", index_col=False) #.head(5)
 inputStock1 = df1_small['Symbol']
-inputSector1 = df1_small['Sector']
+inputSector1 = df1_small['Sector'].unique()
 
 df1 = pd.DataFrame()
 
@@ -49,9 +49,9 @@ df1 = df1.groupby(['Date', 'Sector']).mean().reset_index()
 
 #mid-cap
 
-df1_mid = pd.read_csv("constituents_sp_400.csv", index_col=False).head(5)
+df1_mid = pd.read_csv("constituents_sp_400.csv", index_col=False)#.head(5)
 inputStock2 = df1_mid['Symbol']
-inputSector2 = df1_mid['Sector']
+inputSector2 = df1_mid['Sector'].unique()
 
 df2 = pd.DataFrame()
 
@@ -75,9 +75,9 @@ df2 = df2.groupby(['Date', 'Sector']).mean().reset_index()
 
 #large-cap
 
-df1_large = pd.read_csv("constituents_sp_500.csv", index_col=False).head(5)
+df1_large = pd.read_csv("constituents_sp_500.csv", index_col=False) #.head(5)
 inputStock3 = df1_large['Symbol']
-inputSector3 = df1_large['Sector']
+inputSector3 = df1_large['Sector'].unique()
 
 df3 = pd.DataFrame()
 
