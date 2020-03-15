@@ -106,7 +106,7 @@ server = app.server
 app.config.suppress_callback_exceptions = True
 
 app.layout = html.Div([
-    dbc.Row([
+    dbc.Col([
         dbc.Col([
             dbc.Row(
                 #dbc.Col([
@@ -133,7 +133,7 @@ app.layout = html.Div([
                             id='symbol1-dropdown',
                             options=[{'label': i, 'value': i} for i in df1_copy.Symbol.unique()],
                             multi=True,
-                            value=inputStock1
+                            value=[inputStock1[0]]
                             ),
 
                         dcc.Graph(id='graph2')
@@ -173,7 +173,7 @@ app.layout = html.Div([
                             id='symbol2-dropdown',
                             options=[{'label': i, 'value': i} for i in df2_copy.Symbol.unique()],
                             multi=True,
-                            value=inputStock2
+                            value=[inputStock2[0]]
                             ),
 
                         dcc.Graph(id='graph4')
@@ -215,7 +215,7 @@ app.layout = html.Div([
                             id='symbol3-dropdown',
                             options=[{'label': i, 'value': i} for i in df3_copy.Symbol.unique()],
                             multi=True,
-                            value=inputStock3
+                            value=[inputStock3[0]]
                             ),
 
                         dcc.Graph(id='graph6')
