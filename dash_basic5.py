@@ -158,7 +158,7 @@ body = dbc.Container([
         dbc.Col([
             dbc.Row([
                 html.Div([
-                    
+
                 dcc.Dropdown(
                     id='symbol1-dropdown',
                     options=[{'label': i, 'value': i} for i in df1_copy.Symbol.unique()],
@@ -170,9 +170,9 @@ body = dbc.Container([
                 ], #close div
                 style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'}
                 ) #close div
-            ]), #close Col
+            ]) #close Col
 
-                ]) #close Row
+                ]), #close Row
             
 
         dbc.Col([
