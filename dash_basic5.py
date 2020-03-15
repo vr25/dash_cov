@@ -7,6 +7,7 @@ import plotly.graph_objs as go
 import dash
 import dash_html_components as html 
 import dash_core_components as dcc
+import dash_ui as dui
 from dash.dependencies import Input, Output
 import datetime
 from dateutil.relativedelta import relativedelta
@@ -101,12 +102,56 @@ df3 = df3.groupby(['Date', 'Sector']).mean().reset_index()
 
 app = dash.Dash(__name__) #, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
+my_css_urls = ["https://codepen.io/rmarren1/pen/mLqGRg.css"]
+
+for url in my_css_urls:
+    app.css.append_css({
+        "external_url": url
+    })
+
+grid = dui.Grid(_id="grid", num_rows=12, num_cols=12, grid_padding=0)
+
+grid.add_element(col=1, row=1, width=4, height=6, element=html.Div(
+    style={"background-color": "red", "height": "100%", "width": "100%"}
+))
+
+grid.add_element(col=5, row=1, width=4, height=6, element=html.Div(
+    style={"background-color": "blue", "height": "100%", "width": "100%"}
+))
+
+grid.add_element(col=9, row=1, width=4, height=6, element=html.Div(
+    style={"background-color": "green", "height": "100%", "width": "100%"}
+))
+
+grid.add_element(col=1, row=7, width=4, height=6, element=html.Div(
+    style={"background-color": "orange", "height": "100%", "width": "100%"}
+))
+
+grid.add_element(col=5, row=7, width=4, height=6, element=html.Div(
+    style={"background-color": "purple", "height": "100%", "width": "100%"}
+))
+
+grid.add_element(col=9, row=7, width=4, height=6, element=html.Div(
+    style={"background-color": "purple", "height": "100%", "width": "100%"}
+))
+
+
+app.layout = html.Div(
+    dui.Layout(
+        grid=grid,
+    ),
+    style={
+        'height': '100vh',
+        'width': '100vw'
+    }
+)
+
 #'width': '33%', 'display': 'inline-block',
 
 server = app.server
 
 app.config.suppress_callback_exceptions = True
-
+'''
 app.layout = html.Div([
 html.Div([
     html.H1('Graph 1',
@@ -137,7 +182,7 @@ html.Div([
     style={'width': '48%', 'display': 'inline-block'})
 
 ])
-
+'''
 '''
 body = dbc.Container([dbc.Row([
     dbc.Row([
