@@ -120,7 +120,7 @@ grid.add_element(col=1, row=1, width=4, height=6, element=html.Div([
                 style={'border': '1px solid'}
                 ))
 
-grid.add_element(col=1, row=1, width=4, height=6, element=html.Div([
+grid.add_element(col=5, row=1, width=4, height=6, element=html.Div([
                 dcc.Dropdown(
                     id='sector2-dropdown',
                     options=[{'label': i, 'value': i} for i in df2.Sector.unique()],
