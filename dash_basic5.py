@@ -110,7 +110,7 @@ app.config.suppress_callback_exceptions = True
 body = dbc.Container([dbc.Row([
     dbc.Row([
     dbc.Col([
-        dbc.Row([
+        #dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='sector1-dropdown',
@@ -121,10 +121,11 @@ body = dbc.Container([dbc.Row([
 
                 dcc.Graph(id='graph1')
                 ], #close div
-                style={'width': '33%', 'border': '1px solid'})
-            ]), #close Col
+                style={'width': '33%', 'border': '1px solid'}
+                ),
+           # ]), #close Col
 
-        dbc.Row([
+        #dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='sector2-dropdown',
@@ -136,11 +137,11 @@ body = dbc.Container([dbc.Row([
                 dcc.Graph(id='graph3')
                 ], #close div
                 style={'width': '33%', 'border': '1px solid'}
-                ) #close div
-            ]), #close Col
+                ), #close div
+            #]), #close Col
 
 
-        dbc.Row([
+        #dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='sector3-dropdown',
@@ -153,14 +154,14 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'width': '33%', 'border': '1px solid'}
                 ) #close div
-            ]) #close Col
+            #]) #close Col
         ])
         ]), #close Row
 
     
     dbc.Row([
     dbc.Col([
-        dbc.Row([
+        #dbc.Row([
                 html.Div([
 
                 dcc.Dropdown(
@@ -173,10 +174,10 @@ body = dbc.Container([dbc.Row([
                 dcc.Graph(id='graph2')
                 ], #close div
                 style={'border': '1px solid'}
-                ) #close div
-            ]), #close Col
+                ), #close div
+            #]), #close Col
 
-        dbc.Row([
+        #dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='symbol2-dropdown',
@@ -188,10 +189,10 @@ body = dbc.Container([dbc.Row([
                 dcc.Graph(id='graph4')
                 ], #close div
                 style={'border': '1px solid'}
-                ) #close div
-            ]), #close Col
+                ), #close div
+            #]), #close Col
 
-        dbc.Row([
+        #dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='symbol3-dropdown',
@@ -204,7 +205,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]) #close Col
+            #]) #close Col
         ]) # close Row 
         ])  
 
