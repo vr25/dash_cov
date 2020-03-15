@@ -153,7 +153,7 @@ body = dbc.Container([dbc.Row([
                 style={'border': '1px solid'}
                 ) #close div
             ]) #close Row
-        ]) #close Col
+        ]), #close Col
 
 
     
