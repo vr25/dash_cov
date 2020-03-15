@@ -99,15 +99,15 @@ df3 = df3.groupby(['Date', 'Sector']).mean().reset_index()
 
 # Dash app
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 server = app.server
 
 app.config.suppress_callback_exceptions = True
 
-body = dbc.Container([dbc.Col([
-    dbc.Col([
-        dbc.Row([
+body = dbc.Container([dbc.Row([
+    dbc.Row([
+        dbc.Col([
             html.Div([
                 dcc.Dropdown(
                     id='sector1-dropdown',
@@ -121,7 +121,7 @@ body = dbc.Container([dbc.Col([
                 style={'width': '33%', 'display': 'inline-block', 'border': '1px solid'})
             ]), #close Row
 
-        dbc.Row([
+        dbc.Col([
                 html.Div([
 
                 dcc.Dropdown(
@@ -140,8 +140,8 @@ body = dbc.Container([dbc.Col([
 
 
     
-    dbc.Col([
-        dbc.Row([
+    dbc.Row([
+        dbc.Col([
 
             html.Div([
                 dcc.Dropdown(
@@ -157,7 +157,7 @@ body = dbc.Container([dbc.Col([
                 ) #close div
             ]), #close Row
 
-        dbc.Row([
+        dbc.Col([
             html.Div([
                 dcc.Dropdown(
                     id='symbol2-dropdown',
@@ -174,8 +174,8 @@ body = dbc.Container([dbc.Col([
         ]), # close Col
 
 
-    dbc.Col([
-        dbc.Row([
+    dbc.Row([
+        dbc.Col([
             html.Div([
                 dcc.Dropdown(
                     id='sector3-dropdown',
@@ -191,7 +191,7 @@ body = dbc.Container([dbc.Col([
             ]), #close Row
         
            
-        dbc.Row([
+        dbc.Col([
             html.Div([
                 dcc.Dropdown(
                     id='symbol3-dropdown',
