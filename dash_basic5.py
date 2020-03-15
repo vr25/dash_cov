@@ -108,8 +108,8 @@ server = app.server
 app.config.suppress_callback_exceptions = True
 
 body = dbc.Container([dbc.Row([
-    dbc.Row([
-        dbc.Col([
+    dbc.Col([
+        dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='sector1-dropdown',
@@ -123,7 +123,7 @@ body = dbc.Container([dbc.Row([
                 style={'width': '33%', 'border': '1px solid'})
             ]), #close Col
 
-        dbc.Col([
+        dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='sector2-dropdown',
@@ -139,7 +139,7 @@ body = dbc.Container([dbc.Row([
             ]), #close Col
 
 
-        dbc.Col([
+        dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='sector3-dropdown',
@@ -156,8 +156,8 @@ body = dbc.Container([dbc.Row([
         ]), #close Row
 
     
-    dbc.Row([
-        dbc.Col([
+    dbc.Col([
+        dbc.Row([
                 html.Div([
 
                 dcc.Dropdown(
@@ -173,7 +173,7 @@ body = dbc.Container([dbc.Row([
                 ) #close div
             ]), #close Col
 
-        dbc.Col([
+        dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='symbol2-dropdown',
@@ -188,7 +188,7 @@ body = dbc.Container([dbc.Row([
                 ) #close div
             ]), #close Col
 
-        dbc.Col([
+        dbc.Row([
             html.Div([
                 dcc.Dropdown(
                     id='symbol3-dropdown',
