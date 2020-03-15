@@ -153,11 +153,7 @@ grid.add_element(col=9, row=7, width=4, height=6, element=html.Div(
 app.layout = html.Div(
     dui.Layout(
         grid=grid,
-    ),
-    style={
-        'height': '100vh',
-        'width': '100vw'
-    }
+    )
 )
 
 #'width': '33%', 'display': 'inline-block',
