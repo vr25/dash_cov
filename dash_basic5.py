@@ -105,7 +105,7 @@ server = app.server
 
 app.config.suppress_callback_exceptions = True
 
-body = dbc.Container([dbc.Row([
+body = dbc.Container([dbc.Col([
     dbc.Col([
         dbc.Row([
             html.Div([
