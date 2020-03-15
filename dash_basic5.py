@@ -121,7 +121,7 @@ body = dbc.Container([dbc.Row([
                 dcc.Graph(id='graph1')
                 ], #close div
                 style={'border': '1px solid'})
-            ]), #close Col
+            ], width="auto"), #close Col
 
         dbc.Col([
             html.Div([
@@ -136,7 +136,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]), #close Col
+            ], width="auto"), #close Col
 
 
         dbc.Col([
@@ -152,7 +152,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]) #close Col
+            ], width="auto") #close Col
         ]), #close Row
 
     
@@ -171,7 +171,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]), #close Col
+            ], width="auto"), #close Col
 
         dbc.Col([
             html.Div([
@@ -186,7 +186,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]), #close Col
+            ], width="auto"), #close Col
 
         dbc.Col([
             html.Div([
@@ -201,7 +201,7 @@ body = dbc.Container([dbc.Row([
                 ], #close div
                 style={'border': '1px solid'}
                 ) #close div
-            ]) #close Col
+            ], width="auto") #close Col
         ]) # close Row   
 
         ]) #close Row
