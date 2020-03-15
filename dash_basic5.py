@@ -117,7 +117,7 @@ grid.add_element(col=1, row=1, width=4, height=6, element=html.Div([
 
                 dcc.Graph(id='graph1')
                 ], #close div
-                style={"height": "100%", "width": "100%", 'border': '1px solid'}
+                style={'border': '1px solid'}
                 ))
 
 grid.add_element(col=5, row=1, width=4, height=6, element=html.Div(
