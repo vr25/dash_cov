@@ -108,6 +108,7 @@ server = app.server
 app.config.suppress_callback_exceptions = True
 
 body = dbc.Container([dbc.Row([
+    dbc.Row([
     dbc.Col([
         dbc.Row([
             html.Div([
@@ -153,9 +154,11 @@ body = dbc.Container([dbc.Row([
                 style={'width': '33%', 'border': '1px solid'}
                 ) #close div
             ]) #close Col
+        ])
         ]), #close Row
 
     
+    dbc.Row([
     dbc.Col([
         dbc.Row([
                 html.Div([
@@ -202,7 +205,8 @@ body = dbc.Container([dbc.Row([
                 style={'border': '1px solid'}
                 ) #close div
             ]) #close Col
-        ]) # close Row   
+        ]) # close Row 
+        ])  
 
         ]) #close Row
     ]) #close div
