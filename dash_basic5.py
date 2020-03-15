@@ -106,7 +106,7 @@ server = app.server
 app.config.suppress_callback_exceptions = True
 
 app.layout = html.Div([
-    dbc.Col([
+    #dbc.Col([
         dbc.Col([
             dbc.Row(
                 #dbc.Col([
@@ -227,7 +227,7 @@ app.layout = html.Div([
             ]) #close Col
 
 
-        ]) #close row
+        #]) #close Col
     ]) #close div
 
 
