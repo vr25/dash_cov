@@ -1,1 +1,1 @@
-web gunicorn dash_basic5:server
+web gunicorn viz_data:server
