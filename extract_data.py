@@ -21,11 +21,14 @@ df1 = pd.DataFrame()
 print("small")
 
 for (i, j) in zip(inputStock1, inputSector1):
-    print(i)
-    df1_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
-    df1_['Symbol'] = i
-    df1_['Sector'] = j
-    df1 = pd.concat([df1, df1_])
+    try:
+        print("Fetched: ", i)
+        df1_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
+        df1_['Symbol'] = i
+        df1_['Sector'] = j
+        df1 = pd.concat([df1, df1_])
+    except:
+        print(i)
 
 df1['daily_returns'] = df1['Close'].pct_change()
 df1 = df1.dropna()
@@ -48,11 +51,14 @@ df2 = pd.DataFrame()
 print("mid")
 
 for (i, j) in zip(inputStock2, inputSector2):
-    print(i)
-    df2_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
-    df2_['Symbol'] = i
-    df2_['Sector'] = j
-    df2 = pd.concat([df2, df2_])
+    try:
+        print("Fetched: ", i)
+        df2_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
+        df2_['Symbol'] = i
+        df2_['Sector'] = j
+        df2 = pd.concat([df2, df2_])
+    except:
+        print(i)
 
 df2['daily_returns'] = df2['Adj Close'].pct_change()
 df2 = df2.dropna()
@@ -74,11 +80,15 @@ df3 = pd.DataFrame()
 print("large")
 
 for (i, j) in zip(inputStock3, inputSector3):
-    print(i)
-    df3_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
-    df3_['Symbol'] = i
-    df3_['Sector'] = j
-    df3 = pd.concat([df3, df3_])
+    try:
+        print("Fetched: ", i)
+        df3_ = (web.DataReader(i, 'yahoo', start=start, end=end)).reset_index()
+        df3_['Symbol'] = i
+        df3_['Sector'] = j
+        df3 = pd.concat([df3, df3_])
+    except:
+        print(i)
+
 
 df3['daily_returns'] = df3['Adj Close'].pct_change()
 df3 = df3.dropna()
